@@ -1,3 +1,14 @@
+/* Center and shrink GetResponse form on landing pages */
+getresponse-form,
+[data-gr-form] {
+  display: block !important;
+  max-width: 480px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+  width: 100% !important;
+}
 /* Reset and Base Styles */
 * {
   margin: 0;
