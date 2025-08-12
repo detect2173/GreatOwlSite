@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Onboarding - Great Owl Marketing</title>
+    <meta name="description" content="Great Owl Marketing client onboarding form. Get started with your custom chatbot project by providing us with your business details and requirements.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="Great-Owl-LogoTransparent.png" alt="Great Owl Marketing Logo" class="brand-logo">
+                    <span class="brand-text">Great Owl Marketing</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="index.html#contact" class="nav-link cta-button">Get Started</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Onboarding Section -->
+    <section class="onboarding-fullpage">
+        <div class="onboarding-header">
+            <h1>Client Onboarding</h1>
+            <p class="onboarding-description">
+                Welcome to Great Owl Marketing! Please complete our onboarding questionnaire below.
+            </p>
+        </div>
+
+        <!-- Full Page Tally Form - No Scroll -->
+        <div class="tally-fullpage-container">
+            <iframe 
+                data-tally-src="https://tally.so/r/nGP6KZ?transparentBackground=1&formEventsForwarding=1" 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                title="Great Owl Custom Bot Onboarding Questionnaire">
+            </iframe>
+            <script async src="https://tally.so/widgets/embed.js"></script>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-brand">
+                        <img src="Great-Owl-LogoTransparent.png" alt="Great Owl Marketing Logo" class="brand-logo">
+                        <span class="brand-text">Great Owl Marketing</span>
+                    </div>
+                    <p class="footer-description">
+                        Creating intelligent, custom chatbots for businesses across every niche. 
+                        Choose your perfect solution and soar above the competition.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="index.html#services">DIY Chatbots</a></li>
+                            <li><a href="index.html#services">Managed Chatbots</a></li>
+                            <li><a href="index.html#services">Add-on Modules</a></li>
+                            <li><a href="index.html#services">Niche Specialization</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html#features">About Us</a></li>
+                            <li><a href="index.html#pricing">Pricing</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Great Owl Marketing. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
