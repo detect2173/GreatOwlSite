@@ -20,92 +20,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Consultation Booking Styles -->
-    <style>
-      .consultation-booking-container {
-        background: white;
-        border-radius: 12px;
-        padding: 2rem;
-        margin: 2rem 0;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        border: 1px solid #e5e7eb;
-      }
-
-      .consultation-header {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .consultation-icon {
-        background: #4f46e5;
-        color: white;
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        flex-shrink: 0;
-      }
-
-      .consultation-content h3 {
-        color: #1f2937;
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin: 0 0 0.5rem 0;
-      }
-
-      .consultation-content p {
-        color: #6b7280;
-        margin: 0;
-        line-height: 1.6;
-      }
-
-      .consultation-benefits {
-        margin-bottom: 2rem;
-      }
-
-      .consultation-benefits ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
-      }
-
-      .consultation-benefits li {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: #374151;
-        font-size: 0.95rem;
-      }
-
-      .consultation-benefits li i {
-        color: #10b981;
-        font-size: 0.875rem;
-      }
-
-      @media (max-width: 768px) {
-        .consultation-booking-container {
-          padding: 1.5rem;
-        }
-        
-        .consultation-header {
-          flex-direction: column;
-          text-align: center;
-        }
-        
-        .consultation-benefits ul {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-
     <!-- Manychat -->
     <script
       src="//widget.manychat.com/593357600524046.js"
@@ -120,6 +34,17 @@
         },
       };
     </script>
+    <!-- GetResponse Analytics -->
+  <script type="text/javascript">
+      
+  (function(m, o, n, t, e, r, _){
+          m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+          r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
+      })(window, document, 'script', 'https://an.gr-wcon.com/script/a3c1a5a8-af63-4781-8d0d-50b9b80b32a8/ga.js', 'GrTracking');
+
+
+  </script>
+  <!-- End GetResponse Analytics -->
   </head>
   <body>
     <!-- Navigation -->
@@ -387,7 +312,9 @@
             <div class="pricing-header">
               <h3 class="pricing-title">DIY Chatbot</h3>
               <div class="pricing-price">
-                <span class="amount">$497 - $4,997</span>
+                <span class="currency" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">$</span>
+                <span class="amount">497</span>
+                <span class="period" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">- $4,997</span>
               </div>
               <p class="pricing-description">
                 One-time buildout - complete ownership solution
@@ -418,8 +345,9 @@
             <div class="pricing-header">
               <h3 class="pricing-title">Fully Managed</h3>
               <div class="pricing-price">
-                <span class="amount">$197</span>
-                <span class="period">/month</span>
+                <span class="currency" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">$</span>
+                <span class="amount">197</span>
+                <span class="period" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">/month</span>
               </div>
               <p class="pricing-description">
                 Buildout + ongoing management & optimization
@@ -482,7 +410,7 @@
         <div class="pricing-note">
           <p>
             <strong
-              >Buildout costs range from $497–$4,997 based on
+              >Buildout costs range from $497â€“$4,997 based on
               complexity.</strong
             >
           </p>
@@ -507,33 +435,7 @@
               requirements, and the perfect chatbot solution for your business.
             </p>
 
-            <!-- Calendly Consultation Booking -->
-            <div class="consultation-booking-container">
-              <div class="consultation-header">
-                <div class="consultation-icon">
-                  <i class="fas fa-calendar-alt"></i>
-                </div>
-                <div class="consultation-content">
-                  <h3>Book a Free Consultation Call</h3>
-                  <p>
-                    Schedule a personalized 30-minute consultation to discuss your chatbot needs, 
-                    explore solutions, and get a custom quote for your project.
-                  </p>
-                </div>
-              </div>
-              <div class="consultation-benefits">
-                <ul>
-                  <li><i class="fas fa-check"></i> Free 30-minute strategy session</li>
-                  <li><i class="fas fa-check"></i> Custom solution recommendations</li>
-                  <li><i class="fas fa-check"></i> Pricing tailored to your needs</li>
-                  <li><i class="fas fa-check"></i> No obligation or pressure</li>
-                </ul>
-              </div>
-              <div class="calendly-inline-widget" 
-                   data-url="https://calendly.com/phineasjholdings-info/30min" 
-                   style="min-width:320px;height:700px;">
-              </div>
-              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+           
             </div>
 
             <!-- Primary Chat CTA -->
@@ -584,6 +486,7 @@
           </div>
         </div>
       </div>
+      <getresponse-form form-id="b2decda2-b47b-4a80-b819-beefc5cea304" e="1"></getresponse-form>
     </section>
 
     <!-- Footer -->
@@ -732,7 +635,7 @@
         font-size: 24px;
       "
     >
-      💬
+      ðŸ’¬
     </div>
     <script>
       document
