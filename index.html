@@ -615,35 +615,34 @@
     </script>
 
     <!-- Manual Chat Button (Backup) -->
-    <div
-      id="chat-button"
-      style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-        background: #4f46e5;
-        color: white;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        font-size: 24px;
-      "
-    >
-      ðŸ’¬
-    </div>
-    <script>
-      document
-        .getElementById("chat-button")
-        .addEventListener("click", function () {
-          // Open ManyChat - replace with your actual ManyChat link
-          window.open("https://m.me/593357600524046", "_blank");
-        });
-    </script>
+<div
+  id="chat-button"
+  style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: #4f46e5;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+  "
+>
+  <i class="fas fa-comment-dots" aria-hidden="true"></i>
+</div>
+
+<script>
+  document.getElementById("chat-button").addEventListener("click", function () {
+    // Open ManyChat - replace with your actual ManyChat link
+    window.open("https://m.me/593357600524046", "_blank");
+  });
+</script>
   </body>
 </html>
