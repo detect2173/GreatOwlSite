@@ -6,5 +6,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/greagfup/public_html/
+    - echo "Starting deployment to $DEPLOYPATH at $(date)"
+    # Ensure target directory exists
+    - mkdir -p $DEPLOYPATH
     # Preferred: rsync is typically available on Namecheap cPanel servers
-    - /bin/rsync -avz --delete --exclude ".git" --exclude ".cpanel" ./ $DEPLOYPATH
+    # Preserve .well-known and cgi-bin directories
+    - /bin/rsync -avz --delete --exclude ".git" --exclude ".cpanel" --exclude ".well-known" --exclude "cgi-bin" ./ $DEPLOYPATH
+    - echo "Deployment completed at $(date)"
