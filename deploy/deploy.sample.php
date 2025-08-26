@@ -4,7 +4,7 @@
 // Then replace the secret below with a long random string and set the SAME value in your GitHub Webhook.
 
 // 1) Set a long random secret and use the SAME value in GitHub Webhook settings
-$SHARED_SECRET = 'REPLACE_WITH_A_STRONG_RANDOM_SECRET';
+$SHARED_SECRET = 'Chubsy Ubsy Rocks the Rascals';
 
 // 2) Paths and tools (adjust if your paths differ)
 $REPO_PATH   = '/home/greagfup/gom_repo/GreatOwlSite';  // cPanel Git Version Control repo path
