@@ -1,0 +1,1 @@
+hooks endpoint is deployed. If you can read this at /hooks/ping.txt, the hooks directory is live on the server.
