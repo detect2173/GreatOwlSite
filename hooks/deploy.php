@@ -18,5 +18,9 @@ if (file_exists($secureScript)) {
     return;
 }
 
+// Helpful guidance if the private script hasn't been created yet
 http_response_code(500);
-echo 'Deploy script not found';
+header('Content-Type: text/plain');
+echo "Deploy script not found at $secureScript\n".
+     "Create it on the server (outside public_html) using deploy/deploy.sample.php from this repo as a template.\n".
+     "After creating it, set your webhook secret in that file and in GitHub Webhook settings.";
