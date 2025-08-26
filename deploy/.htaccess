@@ -1,2 +1,0 @@
-# Deny any web access to this folder if it ever exists under public_html
-Require all denied
