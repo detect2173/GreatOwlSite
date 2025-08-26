@@ -1,0 +1,8 @@
+# Disable directory listing and restrict to POST for deploy.php
+Options -Indexes
+
+<Files "deploy.php">
+  <LimitExcept POST>
+    Require all denied
+  </LimitExcept>
+</Files>
