@@ -1,0 +1,10 @@
+# cPanel Git deployment configuration for Great Owl Marketing
+# Repo: detect2173/GreatOwlSite
+# cPanel user: greagfup
+# Live document root: /home/greagfup/public_html/
+
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/greagfup/public_html/
+    # Preferred: rsync is typically available on Namecheap cPanel servers
+    - /bin/rsync -avz --delete --exclude ".git" --exclude ".cpanel" ./ $DEPLOYPATH
