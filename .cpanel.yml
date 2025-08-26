@@ -8,3 +8,6 @@ deployment:
     - export DEPLOYPATH=/home/greagfup/public_html/
     # Preferred: rsync is typically available on Namecheap cPanel servers
     - /bin/rsync -avz --delete --exclude ".git" --exclude ".cpanel" ./ $DEPLOYPATH
+    # Write deployed commit SHA and timestamp for verification when cPanel UI has no logs
+    - /usr/bin/git -C . rev-parse --short HEAD > $DEPLOYPATH/version.txt
+    - /bin/date -u "+%Y-%m-%dT%H:%M:%SZ" > $DEPLOYPATH/deployed_at_utc.txt
