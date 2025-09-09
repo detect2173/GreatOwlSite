@@ -2,7 +2,7 @@
 deployment:
   tasks:
     # Set your live site path
-    - export DEPLOYPATH=/home/gregafup/public_html
+    - export DEPLOYPATH=/home/gregafup/
 
     # Prefer rsync for efficient, repeatable deployments and deletions
     # If /bin/rsync is not available on your host, try /usr/bin/rsync instead.
