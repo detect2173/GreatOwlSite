@@ -9,7 +9,7 @@ deployment:
     # 3) Deploy via rsync when available; fallback to cp if not
     #    Prefer /usr/bin/rsync (common on cPanel), then /bin/rsync
     #    --delete mirrors removals; excludes protect host/system dirs and repo metadata
-    - if [ -x /usr/bin/rsync ]; then /usr/bin/rsync -az --delete \
+    - if [ -x /usr/bin/rsync ]; then /usr/bin/rsync -az \
       --exclude='.git' \
       --exclude='.gitignore' \
       --exclude='.github' \
@@ -18,7 +18,7 @@ deployment:
       --exclude='.well-known' \
       --exclude='cgi-bin' \
       ./ "$DEPLOYPATH"/; \
-      elif [ -x /bin/rsync ]; then /bin/rsync -az --delete \
+      elif [ -x /bin/rsync ]; then /bin/rsync -az \
       --exclude='.git' \
       --exclude='.gitignore' \
       --exclude='.github' \

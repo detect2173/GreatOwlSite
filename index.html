@@ -36,19 +36,33 @@
         },
       };
     </script>
-      <!-- GetResponse Analytics -->
-      <script type="text/javascript">
+    <!-- GetResponse Analytics -->
+  <script type="text/javascript">
 
-          (function(m, o, n, t, e, r, _){
-              m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
-              r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
-          })(window, document, 'script', 'https://an.gr-wcon.com/script/a3c1a5a8-af63-4781-8d0d-50b9b80b32a8/ga.js', 'GrTracking');
+  (function(m, o, n, t, e, r, _){
+          m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+          r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
+      })(window, document, 'script', 'https://an.gr-wcon.com/script/a3c1a5a8-af63-4781-8d0d-50b9b80b32a8/ga.js', 'GrTracking');
 
 
-      </script>
-      <!-- End GetResponse Analytics -->
-
-     </head>
+  </script>
+  <!-- End GetResponse Analytics -->
+    <!-- GetResponse Forms loader -->
+    <!--suppress HtmlUnknownTarget, HtmlRequiredLocalResource -->
+    <script src="https://app.getresponse.com/forms.js"></script>
+    <script>
+      // Fallback init in case auto-loader didn’t run yet
+      window.addEventListener('DOMContentLoaded', function(){
+        try {
+          if (window.GrForms && typeof GrForms.load === 'function') {
+            GrForms.load();
+          }
+        } catch (e) { /* silent */ }
+      });
+    </script>
+    <!-- Define custom element to satisfy linters; GetResponse also defines it, so guard -->
+    <script>try{if(window.customElements&&!customElements.get('getresponse-form')){customElements.define('getresponse-form',class extends HTMLElement{});}}catch(e){/* ignore */}</script>
+  </head>
   <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -496,8 +510,8 @@
           </div>
         </div>
       <div id="free-guide" class="getresponse-form-container" tabindex="-1" aria-label="Free Guide Signup">
-
-          <getresponse-form form-id="b2decda2-b47b-4a80-b819-beefc5cea304" e="1"></getresponse-form>
+        <!--suppress HtmlUnknownTag -->
+                <getresponse-form form-id="b2decda2-b47b-4a80-b819-beefc5cea304" e="1"></getresponse-form>
       </div>
     </section>
 
