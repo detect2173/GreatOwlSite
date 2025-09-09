@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="ugghhhh">
-      <change beforePath="$PROJECT_DIR$/.cpanel.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.cpanel.yml" afterDir="false" />
+    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="htaccess">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,7 @@
       <workItem from="1756216654820" duration="9441000" />
       <workItem from="1756229547483" duration="9663000" />
       <workItem from="1756241096363" duration="1349000" />
-      <workItem from="1757423862930" duration="22370000" />
+      <workItem from="1757423862930" duration="23259000" />
     </task>
     <task id="LOCAL-00001" summary="setting up webhook">
       <option name="closed" value="true" />
@@ -243,7 +241,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757449466640</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ugghhhh again">
+      <option name="closed" value="true" />
+      <created>1757450289802</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1757450289802</updated>
+    </task>
+    <task id="LOCAL-00020" summary="htaccess">
+      <option name="closed" value="true" />
+      <created>1757450501980</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1757450501980</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -265,6 +279,8 @@
     <MESSAGE value="Trying to resolve indexing issue" />
     <MESSAGE value="added forms.js back" />
     <MESSAGE value="ugghhhh" />
-    <option name="LAST_COMMIT_MESSAGE" value="ugghhhh" />
+    <MESSAGE value="ugghhhh again" />
+    <MESSAGE value="htaccess" />
+    <option name="LAST_COMMIT_MESSAGE" value="htaccess" />
   </component>
 </project>

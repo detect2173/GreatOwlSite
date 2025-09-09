@@ -6,7 +6,7 @@
       <paths name="NameCheap">
         <serverdata>
           <mappings>
-            <mapping deploy="/public_html" local="$PROJECT_DIR$" web="http://greatowlmarketing.com" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="http://greatowlmarketing.com" />
           </mappings>
         </serverdata>
       </paths>
