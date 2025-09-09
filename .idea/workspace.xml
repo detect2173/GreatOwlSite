@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="Trying to resolve indexing issue">
-      <change afterPath="$PROJECT_DIR$/forms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="added forms.js back" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +93,7 @@
       <workItem from="1756216654820" duration="9441000" />
       <workItem from="1756229547483" duration="9663000" />
       <workItem from="1756241096363" duration="1349000" />
-      <workItem from="1757423862930" duration="21009000" />
+      <workItem from="1757423862930" duration="21322000" />
     </task>
     <task id="LOCAL-00001" summary="setting up webhook">
       <option name="closed" value="true" />
@@ -218,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757446328945</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added forms.js back">
+      <option name="closed" value="true" />
+      <created>1757449025516</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1757449025516</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -238,6 +243,7 @@
     <MESSAGE value="Fixed path issue" />
     <MESSAGE value="Indexing Issue, .htaccess added" />
     <MESSAGE value="Trying to resolve indexing issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to resolve indexing issue" />
+    <MESSAGE value="added forms.js back" />
+    <option name="LAST_COMMIT_MESSAGE" value="added forms.js back" />
   </component>
 </project>
