@@ -1,0 +1,24 @@
+---
+deployment:
+  tasks:
+    # Set your live site path
+    - export DEPLOYPATH=/home/gregafup/public_html
+
+    # Prefer rsync for efficient, repeatable deployments and deletions
+    # If /bin/rsync is not available on your host, try /usr/bin/rsync instead.
+    - if [ -x /bin/rsync ]; then /bin/rsync -az --delete \
+        --exclude='.git' \
+        --exclude='.gitignore' \
+        --exclude='.github' \
+        --exclude='node_modules' \
+        ./ "$DEPLOYPATH"/; \
+      elif [ -x /usr/bin/rsync ]; then /usr/bin/rsync -az --delete \
+        --exclude='.git' \
+        --exclude='.gitignore' \
+        --exclude='.github' \
+        --exclude='node_modules' \
+        ./ "$DEPLOYPATH"/; \
+      else \
+        # Fallback to cp if rsync is unavailable (no delete of removed files)
+        /bin/cp -a ./ "$DEPLOYPATH"/; \
+      fi
