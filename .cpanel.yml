@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    # Set your live site path
+    # Set your live site path check it out
     - export DEPLOYPATH=/home/greagfup/public_html
 
     # Prefer rsync for efficient, repeatable deployments and deletions
