@@ -1,24 +1,33 @@
----
 deployment:
   tasks:
-    # Set your live site path check it out
+    # 1) Live site path (primary domain docroot)
     - export DEPLOYPATH=/home/greagfup/public_html
 
-    # Prefer rsync for efficient, repeatable deployments and deletions
-    # If /bin/rsync is not available on your host, try /usr/bin/rsync instead.
-    - if [ -x /bin/rsync ]; then /bin/rsync -az --delete \
-        --exclude='.git' \
-        --exclude='.gitignore' \
-        --exclude='.github' \
-        --exclude='node_modules' \
-        ./ "$DEPLOYPATH"/; \
-      elif [ -x /usr/bin/rsync ]; then /usr/bin/rsync -az --delete \
-        --exclude='.git' \
-        --exclude='.gitignore' \
-        --exclude='.github' \
-        --exclude='node_modules' \
-        ./ "$DEPLOYPATH"/; \
+    # 2) Ensure destination exists
+    - mkdir -p "$DEPLOYPATH"
+
+    # 3) Deploy via rsync when available; fallback to cp if not
+    #    Prefer /usr/bin/rsync (common on cPanel), then /bin/rsync
+    #    --delete mirrors removals; excludes protect host/system dirs and repo metadata
+    - if [ -x /usr/bin/rsync ]; then /usr/bin/rsync -az --delete \
+      --exclude='.git' \
+      --exclude='.gitignore' \
+      --exclude='.github' \
+      --exclude='.cpanel.yml' \
+      --exclude='node_modules' \
+      --exclude='.well-known' \
+      --exclude='cgi-bin' \
+      ./ "$DEPLOYPATH"/; \
+      elif [ -x /bin/rsync ]; then /bin/rsync -az --delete \
+      --exclude='.git' \
+      --exclude='.gitignore' \
+      --exclude='.github' \
+      --exclude='.cpanel.yml' \
+      --exclude='node_modules' \
+      --exclude='.well-known' \
+      --exclude='cgi-bin' \
+      ./ "$DEPLOYPATH"/; \
       else \
-        # Fallback to cp if rsync is unavailable (no delete of removed files)
-        /bin/cp -a ./ "$DEPLOYPATH"/; \
+      # Fallback to cp if rsync is unavailable (no delete of removed files)
+      /bin/cp -a ./ "$DEPLOYPATH"/; \
       fi
