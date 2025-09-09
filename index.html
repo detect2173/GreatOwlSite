@@ -49,7 +49,17 @@
   <!-- End GetResponse Analytics -->
     <!-- GetResponse Forms loader -->
     <!--suppress HtmlUnknownTarget, HtmlRequiredLocalResource -->
-    <script src="https://app.getresponse.com/forms.js" defer></script>
+    <script src="https://app.getresponse.com/forms.js"></script>
+    <script>
+      // Fallback init in case auto-loader didn’t run yet
+      window.addEventListener('DOMContentLoaded', function(){
+        try {
+          if (window.GrForms && typeof GrForms.load === 'function') {
+            GrForms.load();
+          }
+        } catch (e) { /* silent */ }
+      });
+    </script>
     <!-- Define custom element to satisfy linters; GetResponse also defines it, so guard -->
     <script>try{if(window.customElements&&!customElements.get('getresponse-form')){customElements.define('getresponse-form',class extends HTMLElement{});}}catch(e){/* ignore */}</script>
   </head>

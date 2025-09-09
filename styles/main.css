@@ -61,6 +61,7 @@ html {
 #free-guide {
   scroll-margin-top: 90px; /* approximate navbar height */
   outline: none; /* paired with tabindex="-1" for focus without outline */
+  min-height: 120px; /* keep visible space while GetResponse loads */
 }
 
 body {
