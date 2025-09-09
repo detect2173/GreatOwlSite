@@ -1,13 +1,10 @@
-# Serve the index and disable folder listings
 DirectoryIndex index.html index.htm index.php
 Options -Indexes
 
-# Force HTTPS (optional but recommended)
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Light caching for static assets (optional)
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType text/css "access plus 7 days"
