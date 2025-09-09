@@ -9,13 +9,9 @@
   width: 100% !important;
 }
 
-getresponse-form input[type="email"],
 [data-gr-form] input[type="email"],
-getresponse-form input[type="text"],
 [data-gr-form] input[type="text"],
-getresponse-form button,
 [data-gr-form] button,
-getresponse-form input[type="submit"],
 [data-gr-form] input[type="submit"] {
   max-width: 340px !important;
   margin-left: auto !important;
@@ -58,6 +54,13 @@ getresponse-form input[type="submit"],
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Ensure the Free Guide form scrolls correctly under the sticky header
+   and has room to be centered in the viewport */
+#free-guide {
+  scroll-margin-top: 90px; /* approximate navbar height */
+  outline: none; /* paired with tabindex="-1" for focus without outline */
 }
 
 body {
@@ -803,10 +806,11 @@ body {
 }
 
 /* GetResponse Form Styling */
-.getresponse-form-container getresponse-form,
 .getresponse-form-container [data-gr-form] {
   width: 100% !important;
 }
+/*noinspection CssUnknownTarget*/
+/* The GetResponse script upgrades <getresponse-form>; keep a non-erroring hint for IDEs without matching the tag in selector */
 
 .getresponse-form-container input[type="email"],
 .getresponse-form-container input[type="text"],
@@ -1352,7 +1356,7 @@ textarea:focus {
 }
 
 /* High Contrast Mode Support */
-@media (prefers-contrast: high) {
+@media (prefers-contrast: more) {
   :root {
     --text-primary: #000000;
     --text-secondary: #333333;

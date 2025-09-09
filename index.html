@@ -15,14 +15,16 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!--suppress HtmlUnknownTarget, HtmlRequiredLocalResource -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <!-- Manychat -->
+    <!--suppress HtmlUnknownTarget, HtmlRequiredLocalResource -->
     <script
-      src="//widget.manychat.com/593357600524046.js"
+      src="https://widget.manychat.com/593357600524046.js"
       async="async"
     ></script>
     <script>
@@ -46,7 +48,10 @@
   </script>
   <!-- End GetResponse Analytics -->
     <!-- GetResponse Forms loader -->
+    <!--suppress HtmlUnknownTarget, HtmlRequiredLocalResource -->
     <script src="https://app.getresponse.com/forms.js" defer></script>
+    <!-- Define custom element to satisfy linters; GetResponse also defines it, so guard -->
+    <script>try{if(window.customElements&&!customElements.get('getresponse-form')){customElements.define('getresponse-form',class extends HTMLElement{});}}catch(e){/* ignore */}</script>
     <!-- deploy test marker: will be removed after verification -->
   </head>
   <body>
@@ -67,6 +72,7 @@
           <a href="#features" class="nav-link">Features</a>
           <a href="#pricing" class="nav-link">Pricing</a>
           <a href="#contact" class="nav-link">Contact</a>
+          <a href="#free-guide" class="nav-link">Free Guide</a>
           <a href="#contact" class="nav-link cta-button">Get Started</a>
         </div>
         <div class="hamburger" id="hamburger">
@@ -494,8 +500,9 @@
             </div>
           </div>
         </div>
-      <div class="getresponse-form-container">
-        <getresponse-form form-id="b2decda2-b47b-4a80-b819-beefc5cea304" e="1"></getresponse-form>
+      <div id="free-guide" class="getresponse-form-container" tabindex="-1" aria-label="Free Guide Signup">
+        <!--suppress HtmlUnknownTag -->
+                <getresponse-form form-id="b2decda2-b47b-4a80-b819-beefc5cea304" e="1"></getresponse-form>
       </div>
     </section>
 
@@ -576,16 +583,22 @@
         })
       );
 
-      // Smooth scrolling
+      // Smooth scrolling (default to start)
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
+          const href = this.getAttribute("href");
+          const target = document.querySelector(href);
           if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
+            e.preventDefault();
+            // If the link is the Free Guide link, center the form
+            if (href === "#free-guide") {
+              target.scrollIntoView({ behavior: "smooth", block: "center" });
+              // move focus for accessibility without scrolling
+              setTimeout(() => target.focus({ preventScroll: true }), 600);
+              history.replaceState(null, "", href);
+            } else {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
           }
         });
       });
