@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="Fixed form rendering and htaccess issues">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.css" afterDir="false" />
-    </list>
+    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="Added explanations for addons" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +49,7 @@
     "WebServerToolWindowPanel.toolwindow.show.date": "false",
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "C:/repos/GreatOwlSite",
     "node.js.detected.package.eslint": "true",
@@ -97,6 +95,7 @@
       <workItem from="1756229547483" duration="9663000" />
       <workItem from="1756241096363" duration="1349000" />
       <workItem from="1757423862930" duration="29554000" />
+      <workItem from="1757514426399" duration="321000" />
     </task>
     <task id="LOCAL-00001" summary="setting up webhook">
       <option name="closed" value="true" />
@@ -282,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757513972503</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added explanations for addons">
+      <option name="closed" value="true" />
+      <created>1757514601237</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1757514601237</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -309,6 +316,7 @@
     <MESSAGE value="htaccess 2" />
     <MESSAGE value="Github" />
     <MESSAGE value="Fixed form rendering and htaccess issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed form rendering and htaccess issues" />
+    <MESSAGE value="Added explanations for addons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added explanations for addons" />
   </component>
 </project>
