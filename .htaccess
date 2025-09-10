@@ -1,5 +1,9 @@
-RewriteOptions inherit
-RewriteEngine on
+# Noindex utility/contract pages etc
+<FilesMatch "^(gom-onboarding|smartbotpro-agreement|thank-you)\.html$">
+  Header set X-Robots-Tag "noindex, nofollow, noarchive"
+</FilesMatch>
+
+RewriteEngine On
 
 # Set default homepage files
 DirectoryIndex index.html index.php index.htm
@@ -8,10 +12,14 @@ DirectoryIndex index.html index.php index.htm
 Options -Indexes
 
 # Disable caching for sensitive assets
-Header set Cache-Control "no-cache, no-store, must-revalidate"
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "0"
+</IfModule>
 
-RewriteCond %{HTTP_HOST} ^.*$
-RewriteRule ^osagold$ "https\:\/\/greatowlmarketing\.com\/" [R=301,L]
+# Redirect /osagold to homepage
+RewriteRule ^osagold$ https://greatowlmarketing.com/ [R=301,L]
 
 # ✅ Content Security Policy
 <IfModule mod_headers.c>
@@ -24,8 +32,3 @@ RewriteRule ^osagold$ "https\:\/\/greatowlmarketing\.com\/" [R=301,L]
     frame-src https://app.getresponse.com https://an.gr-wcon.com;
   "
 </IfModule>
-
-<IfModule mod_headers.c>
-  Header set Content-Security-Policy "default-src * 'unsafe-inline' 'unsafe-eval' data:;"
-</IfModule>
-
