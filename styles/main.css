@@ -1340,9 +1340,17 @@ dialog#addonModal{border:0;padding:0;width:min(92vw,720px);max-width:720px;max-h
 dialog#addonModal[open]{display:block}
 dialog#addonModal::backdrop{background:rgba(15,23,42,.6)}
 dialog#addonModal .addon-card{max-height:85vh;overflow:auto}
-.addon-card{position:relative;background:#fff;border-radius:var(--border-radius-lg);padding:2rem;box-shadow:var(--shadow-xl)}
-.addon-close{position:absolute;top:10px;right:12px;border:0;background:transparent;font-size:1.75rem;line-height:1;cursor:pointer}
-.addon-price{font-weight:700;color:var(--primary-color);margin:.5rem 0 1rem}
+.addon-card{position:relative;background:#fff;border-radius:var(--border-radius-lg);padding:2rem;box-shadow:var(--shadow-xl);font-size:1.0625rem;line-height:1.7}
+.addon-close{position:absolute;top:10px;right:12px;border:0;background:transparent;font-size:2rem;line-height:1;cursor:pointer}
+.addon-price{font-weight:700;color:var(--primary-color);margin:.5rem 0 1rem;font-size:1.25rem}
+#addon-title{font-size:1.6rem;font-weight:800;margin:0 0 .5rem 0}
+#addon-desc{font-size:1.0625rem}
+@media (max-width: 480px){
+  .addon-card{padding:1.5rem;font-size:1rem;line-height:1.65}
+  #addon-title{font-size:1.4rem}
+  .addon-close{font-size:1.75rem}
+  .addon-price{font-size:1.125rem}
+}
 
 /* Tiny button for inline view links */
 .btn.btn-xs{padding:.35rem .7rem;font-size:.85rem;line-height:1;border-radius:6px}
