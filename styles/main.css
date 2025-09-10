@@ -1335,12 +1335,14 @@ body {
 }
 
 /* Add-on Modal (dialog) */
-dialog#addonModal{border:0;padding:0;width:min(92vw,720px);max-width:720px;background:transparent}
+dialog#addonModal{border:0;padding:0;width:min(92vw,720px);max-width:720px;max-height:90vh;background:transparent}
+/* Ensure centered presentation across browsers; fallback when <dialog> behaves like a regular element */
+dialog#addonModal[open]{position:fixed;inset:0;display:grid;place-items:center;padding:0}
+dialog#addonModal .addon-card{max-height:85vh;overflow:auto}
 dialog#addonModal::backdrop{background:rgba(15,23,42,.6)}
 .addon-card{background:#fff;border-radius:var(--border-radius-lg);padding:2rem;box-shadow:var(--shadow-xl)}
 .addon-close{position:absolute;top:10px;right:12px;border:0;background:transparent;font-size:1.75rem;line-height:1;cursor:pointer}
 .addon-price{font-weight:700;color:var(--primary-color);margin:.5rem 0 1rem}
-.addon-actions{margin-top:1.25rem;text-align:center}
 
 /* Tiny button for inline view links */
 .btn.btn-xs{padding:.35rem .7rem;font-size:.85rem;line-height:1;border-radius:6px}

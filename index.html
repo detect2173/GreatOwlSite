@@ -475,12 +475,9 @@
 <dialog id="addonModal" aria-labelledby="addon-title">
   <button class="addon-close" aria-label="Close dialog">×</button>
   <div class="addon-card">
-    <h3 id="addon-title">Add-on</h3>
+    <h3 id="addon-title" tabindex="-1">Add-on</h3>
     <p id="addon-price" class="addon-price"></p>
     <p id="addon-desc" class="addon-desc"></p>
-    <div class="addon-actions">
-      <a href="#contact" class="btn btn-primary">Get This Add-on</a>
-    </div>
   </div>
 </dialog>
 
@@ -720,7 +717,10 @@
     }
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
-    setTimeout(()=>closeBtn.focus(), 50);
+    setTimeout(()=>{
+      // Prefer focusing the title for screen readers now that action buttons are removed
+      (titleEl?.focus ? titleEl : closeBtn).focus();
+    }, 50);
   }
   function closeModal(){
     if(typeof modal.close === 'function') modal.close();
