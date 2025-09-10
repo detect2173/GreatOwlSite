@@ -1,15 +1,31 @@
-DirectoryIndex index.html index.htm index.php
+RewriteOptions inherit
+RewriteEngine on
+
+# Set default homepage files
+DirectoryIndex index.html index.php index.htm
+
+# Disable directory listings
 Options -Indexes
 
-RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Disable caching for sensitive assets
+Header set Cache-Control "no-cache, no-store, must-revalidate"
 
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType text/css "access plus 7 days"
-  ExpiresByType application/javascript "access plus 7 days"
-  ExpiresByType image/png "access plus 30 days"
-  ExpiresByType image/jpeg "access plus 30 days"
-  ExpiresByType image/svg+xml "access plus 30 days"
+RewriteCond %{HTTP_HOST} ^.*$
+RewriteRule ^osagold$ "https\:\/\/greatowlmarketing\.com\/" [R=301,L]
+
+# ✅ Content Security Policy
+<IfModule mod_headers.c>
+  Header set Content-Security-Policy "
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.getresponse.com https://an.gr-wcon.com;
+    connect-src 'self' https://app.getresponse.com https://an.gr-wcon.com;
+    img-src 'self' data: https://app.getresponse.com https://an.gr-wcon.com;
+    style-src 'self' 'unsafe-inline' https://app.getresponse.com;
+    frame-src https://app.getresponse.com https://an.gr-wcon.com;
+  "
 </IfModule>
+
+<IfModule mod_headers.c>
+  Header set Content-Security-Policy "default-src * 'unsafe-inline' 'unsafe-eval' data:;"
+</IfModule>
+

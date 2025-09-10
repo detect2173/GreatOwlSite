@@ -1,655 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data:;">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Great Owl Marketing - Custom Chatbots for Any Niche</title>
     <meta
-      name="description"
-      content="Transform your customer engagement with custom chatbots designed for your niche. Choose DIY (build and handoff) or fully managed solutions with ManyChat hosting and management."
+            name="description"
+            content="Transform your customer engagement with custom chatbots designed for your niche. Choose DIY (build and handoff) or fully managed solutions with ManyChat hosting and management."
     />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
     />
     <!--suppress HtmlUnknownTarget, HtmlRequiredLocalResource -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <!-- Manychat -->
     <!--suppress HtmlUnknownTarget, HtmlRequiredLocalResource -->
     <script
-      src="https://widget.manychat.com/593357600524046.js"
-      async="async"
+            src="https://widget.manychat.com/593357600524046.js"
+            async="async"
     ></script>
     <script>
-      window.mcWidget = {
-        options: {
-          color: "#4f46e5",
-          position: "bottom-right",
-          greeting: "Hi! How can I help you with your custom chatbot needs?",
-        },
-      };
+        window.mcWidget = {
+            options: {
+                color: "#4f46e5",
+                position: "bottom-right",
+                greeting: "Hi! How can I help you with your custom chatbot needs?",
+            },
+        };
     </script>
     <!-- GetResponse Analytics -->
-  <script type="text/javascript">
-
-  (function(m, o, n, t, e, r, _){
-          m['__GetResponseAnalyticsObject'] = e;m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
-          r = o.createElement(n);_ = o.getElementsByTagName(n)[0];r.async = 1;r.src = t;r.setAttribute('crossorigin', 'use-credentials');_.parentNode .insertBefore(r, _);
-      })(window, document, 'script', 'https://an.gr-wcon.com/script/a3c1a5a8-af63-4781-8d0d-50b9b80b32a8/ga.js', 'GrTracking');
-
-
-  </script>
-  <!-- End GetResponse Analytics -->
-    <!-- GetResponse Forms loader -->
-    <!--suppress HtmlUnknownTarget, HtmlRequiredLocalResource -->
-    <script src="https://app.getresponse.com/forms.js"></script>
-    <script>
-      // Fallback init in case auto-loader didn’t run yet
-      window.addEventListener('DOMContentLoaded', function(){
-        try {
-          if (window.GrForms && typeof GrForms.load === 'function') {
-            GrForms.load();
-          }
-        } catch (e) { /* silent */ }
-      });
+    <script type="text/javascript">
+        (function(m, o, n, t, e, r, _){
+            m['__GetResponseAnalyticsObject'] = e;
+            m[e] = m[e] || function() {(m[e].q = m[e].q || []).push(arguments)};
+            r = o.createElement(n); _ = o.getElementsByTagName(n)[0];
+            r.async = 1;
+            r.src = t;
+            r.setAttribute('crossorigin', 'use-credentials');
+            _.parentNode.insertBefore(r, _);
+        })(window, document, 'script',
+            'https://an.gr-wcon.com/script/a3c1a5a8-af63-4781-8d0d-50b9b80b32a8/ga.js',
+            'GrTracking');
     </script>
-    <!-- Define custom element to satisfy linters; GetResponse also defines it, so guard -->
-    <script>try{if(window.customElements&&!customElements.get('getresponse-form')){customElements.define('getresponse-form',class extends HTMLElement{});}}catch(e){/* ignore */}</script>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
+    <!-- End GetResponse Analytics -->
+
+    <!-- GetResponse Forms Loader -->
+    <script src="https://app.getresponse.com/forms.js"></script>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
         <div class="nav-brand">
-          <img
-            src="Great-Owl-LogoTransparent.png"
-            alt="Great Owl Marketing Logo"
-            class="brand-logo"
-          />
-          <span class="brand-text">Great Owl Marketing</span>
+            <img
+                    src="Great-Owl-LogoTransparent.png"
+                    alt="Great Owl Marketing Logo"
+                    class="brand-logo"
+            />
+            <span class="brand-text">Great Owl Marketing</span>
         </div>
         <div class="nav-menu" id="nav-menu">
-          <a href="#home" class="nav-link">Home</a>
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#features" class="nav-link">Features</a>
-          <a href="#pricing" class="nav-link">Pricing</a>
-          <a href="#contact" class="nav-link">Contact</a>
-          <a href="#free-guide" class="nav-link">Free Guide</a>
-          <a href="#contact" class="nav-link cta-button">Get Started</a>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#free-guide" class="nav-link">Free Guide</a>
+            <a href="#contact" class="nav-link cta-button">Get Started</a>
         </div>
         <div class="hamburger" id="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-container">
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-container">
         <div class="hero-content">
-          <h1 class="hero-title">
-            Custom Chatbots for
-            <span class="gradient-text">Any Niche</span>
-          </h1>
-          <p class="hero-description">
-              Great Owl Automation creates intelligent, custom chatbots tailored to
-              your specific industry and business needs. Choose from DIY solutions
-              (we build, you own) or fully managed services with ManyChat hosting
-              and ongoing support.
+            <h1 class="hero-title">
+                Custom Chatbots for
+                <span class="gradient-text">Any Niche</span>
+            </h1>
+            <p class="hero-description">
+                Great Owl Automation creates intelligent, custom chatbots tailored to
+                your specific industry and business needs. Choose from DIY solutions
+                (we build, you own) or fully managed services with ManyChat hosting
+                and ongoing support.
             </p>
-          <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Get Your Custom Bot</a>
-            <a href="#services" class="btn btn-secondary">Explore Solutions</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <span class="stat-number">200+</span>
-              <span class="stat-label">Custom Bots Built</span>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get Your Custom Bot</a>
+                <a href="#services" class="btn btn-secondary">Explore Solutions</a>
             </div>
-            <div class="stat">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">Industries Served</span>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">Custom Bots Built</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Industries Served</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Customer Support</span>
+                </div>
             </div>
-            <div class="stat">
-              <span class="stat-number">24/7</span>
-              <span class="stat-label">Customer Support</span>
-            </div>
-          </div>
         </div>
         <div class="hero-visual">
-          <div class="automation-graphic">
-            <div class="node node-1"><i class="fas fa-comments"></i></div>
-            <div class="node node-2"><i class="fas fa-users"></i></div>
-            <div class="node node-3"><i class="fas fa-chart-line"></i></div>
-            <div class="node node-4"><i class="fas fa-robot"></i></div>
-            <div class="connection connection-1"></div>
-            <div class="connection connection-2"></div>
-            <div class="connection connection-3"></div>
-          </div>
+            <div class="automation-graphic">
+                <div class="node node-1"><i class="fas fa-comments"></i></div>
+                <div class="node node-2"><i class="fas fa-users"></i></div>
+                <div class="node node-3"><i class="fas fa-chart-line"></i></div>
+                <div class="node node-4"><i class="fas fa-robot"></i></div>
+                <div class="connection connection-1"></div>
+                <div class="connection connection-2"></div>
+                <div class="connection connection-3"></div>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-      <div class="container">
+<!-- Services Section -->
+<section id="services" class="services">
+    <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Custom Chatbot Solutions</h2>
-          <p class="section-description">
-            Tailored chatbot experiences designed specifically for your industry
-            and business objectives
-          </p>
+            <h2 class="section-title">Custom Chatbot Solutions</h2>
+            <p class="section-description">
+                Tailored chatbot experiences designed specifically for your industry
+                and business objectives
+            </p>
         </div>
         <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-tools"></i>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="service-title">DIY Chatbot Solutions</h3>
+                <p class="service-description">
+                    We build a custom chatbot perfectly tailored to your niche, then
+                    hand it over to you for complete ownership and control.
+                </p>
+                <ul class="service-features">
+                    <li>Custom conversation flows</li>
+                    <li>Niche-specific responses</li>
+                    <li>Complete ownership transfer</li>
+                    <li>Training & documentation</li>
+                    <li>One-time setup fee</li>
+                </ul>
             </div>
-            <h3 class="service-title">DIY Chatbot Solutions</h3>
-            <p class="service-description">
-              We build a custom chatbot perfectly tailored to your niche, then
-              hand it over to you for complete ownership and control.
-            </p>
-            <ul class="service-features">
-              <li>Custom conversation flows</li>
-              <li>Niche-specific responses</li>
-              <li>Complete ownership transfer</li>
-              <li>Training & documentation</li>
-              <li>One-time setup fee</li>
-            </ul>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-headset"></i>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="service-title">Fully Managed Chatbots</h3>
+                <p class="service-description">
+                    Complete ManyChat hosting and management service. We handle
+                    everything while you focus on your business.
+                </p>
+                <ul class="service-features">
+                    <li>ManyChat hosting & management</li>
+                    <li>Ongoing optimization</li>
+                    <li>Performance monitoring</li>
+                    <li>Regular updates & maintenance</li>
+                    <li>24/7 technical support</li>
+                </ul>
             </div>
-            <h3 class="service-title">Fully Managed Chatbots</h3>
-            <p class="service-description">
-              Complete ManyChat hosting and management service. We handle
-              everything while you focus on your business.
-            </p>
-            <ul class="service-features">
-              <li>ManyChat hosting & management</li>
-              <li>Ongoing optimization</li>
-              <li>Performance monitoring</li>
-              <li>Regular updates & maintenance</li>
-              <li>24/7 technical support</li>
-            </ul>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-puzzle-piece"></i>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <h3 class="service-title">Add-on Modules</h3>
+                <p class="service-description">
+                    Enhance your chatbot with specialized modules designed to boost
+                    engagement and conversions for your specific needs.
+                </p>
+                <ul class="service-features">
+                    <li>Lead Capture & Qualification</li>
+                    <li>Appointment Booking Integration</li>
+                    <li>FAQ / Auto-Responder Bot</li>
+                    <li>Post-Purchase Follow-Up</li>
+                    <li>Instagram Comment to DM</li>
+                    <li>Custom Bot Assistant Design</li>
+                    <li>Abandoned Cart Recovery</li>
+                    <li>Email/Autoresponder Integration</li>
+                    <li>Tagging + CRM-style note logging</li>
+                    <li>Prebuilt Product Catalog</li>
+                    <li>"Help Me Decide" Flow Builder</li>
+                    <li>Mini-Tutorial Bot for Digital Products</li>
+                </ul>
             </div>
-            <h3 class="service-title">Add-on Modules</h3>
-            <p class="service-description">
-              Enhance your chatbot with specialized modules designed to boost
-              engagement and conversions for your specific needs.
-            </p>
-            <ul class="service-features">
-              <li>Lead Capture & Qualification</li>
-              <li>Appointment Booking Integration</li>
-              <li>FAQ / Auto-Responder Bot</li>
-              <li>Post-Purchase Follow-Up</li>
-              <li>Instagram Comment to DM</li>
-              <li>Custom Bot Assistant Design</li>
-              <li>Abandoned Cart Recovery</li>
-              <li>Email/Autoresponder Integration</li>
-              <li>Tagging + CRM-style note logging</li>
-              <li>Prebuilt Product Catalog</li>
-              <li>"Help Me Decide" Flow Builder</li>
-              <li>Mini-Tutorial Bot for Digital Products</li>
-            </ul>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-industry"></i>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h3 class="service-title">Niche Specialization</h3>
+                <p class="service-description">
+                    From healthcare to e-commerce, real estate to fitness - we create
+                    chatbots that speak your industry's language.
+                </p>
+                <ul class="service-features">
+                    <li>Industry-specific templates</li>
+                    <li>Compliance considerations</li>
+                    <li>Niche vocabulary & tone</li>
+                    <li>Sector best practices</li>
+                    <li>Competitor analysis</li>
+                </ul>
             </div>
-            <h3 class="service-title">Niche Specialization</h3>
-            <p class="service-description">
-              From healthcare to e-commerce, real estate to fitness - we create
-              chatbots that speak your industry's language.
-            </p>
-            <ul class="service-features">
-              <li>Industry-specific templates</li>
-              <li>Compliance considerations</li>
-              <li>Niche vocabulary & tone</li>
-              <li>Sector best practices</li>
-              <li>Competitor analysis</li>
-            </ul>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-      <div class="container">
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
         <div class="features-content">
-          <div class="features-text">
-            <h2 class="section-title">Why Choose Great Owl Marketing?</h2>
-            <div class="feature-list">
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-brain"></i>
+            <div class="features-text">
+                <h2 class="section-title">Why Choose Great Owl Marketing?</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Niche Expertise</h4>
+                            <p>
+                                Deep understanding of industry-specific needs and customer
+                                behaviors across 50+ different niches.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Flexible Solutions</h4>
+                            <p>
+                                Choose between DIY ownership or fully managed services based
+                                on your preferences and resources.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Quick Deployment</h4>
+                            <p>
+                                Get your custom chatbot up and running faster with our
+                                proven development process and templates.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>Proven Results</h4>
+                            <p>
+                                Track record of increasing customer engagement and
+                                conversion rates across diverse industries.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-content">
-                  <h4>Niche Expertise</h4>
-                  <p>
-                    Deep understanding of industry-specific needs and customer
-                    behaviors across 50+ different niches.
-                  </p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-cogs"></i>
-                </div>
-                <div class="feature-content">
-                  <h4>Flexible Solutions</h4>
-                  <p>
-                    Choose between DIY ownership or fully managed services based
-                    on your preferences and resources.
-                  </p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-rocket"></i>
-                </div>
-                <div class="feature-content">
-                  <h4>Quick Deployment</h4>
-                  <p>
-                    Get your custom chatbot up and running faster with our
-                    proven development process and templates.
-                  </p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i class="fas fa-chart-line"></i>
-                </div>
-                <div class="feature-content">
-                  <h4>Proven Results</h4>
-                  <p>
-                    Track record of increasing customer engagement and
-                    conversion rates across diverse industries.
-                  </p>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="features-visual">
-            <div class="dashboard-mockup">
-              <div class="dashboard-header">
-                <div class="dashboard-title">Marketing Dashboard</div>
-                <div class="dashboard-controls">
-                  <span class="control"></span>
-                  <span class="control"></span>
-                  <span class="control"></span>
+            <div class="features-visual">
+                <div class="dashboard-mockup">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">Marketing Dashboard</div>
+                        <div class="dashboard-controls">
+                            <span class="control"></span>
+                            <span class="control"></span>
+                            <span class="control"></span>
+                        </div>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="metric-card">
+                            <div class="metric-label">Bot Interactions</div>
+                            <div class="metric-value">1,247</div>
+                            <div class="metric-trend positive">+23%</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Lead Capture Rate</div>
+                            <div class="metric-value">31.2%</div>
+                            <div class="metric-trend positive">+15%</div>
+                        </div>
+                        <div class="chart-placeholder"></div>
+                    </div>
                 </div>
-              </div>
-              <div class="dashboard-content">
-                <div class="metric-card">
-                  <div class="metric-label">Bot Interactions</div>
-                  <div class="metric-value">1,247</div>
-                  <div class="metric-trend positive">+23%</div>
-                </div>
-                <div class="metric-card">
-                  <div class="metric-label">Lead Capture Rate</div>
-                  <div class="metric-value">31.2%</div>
-                  <div class="metric-trend positive">+15%</div>
-                </div>
-                <div class="chart-placeholder"></div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-      <div class="container">
+<!-- Pricing Section -->
+<section id="pricing" class="pricing">
+    <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Transparent Pricing</h2>
-          <p class="section-description">
-            Our systems are custom-built, so pricing depends on how hands-on you
-            want to be. Here's a ballpark to help you plan:
-          </p>
+            <h2 class="section-title">Transparent Pricing</h2>
+            <p class="section-description">
+                Our systems are custom-built, so pricing depends on how hands-on you
+                want to be. Here's a ballpark to help you plan:
+            </p>
         </div>
         <div class="pricing-grid">
-          <div class="pricing-card">
-            <div class="pricing-header">
-              <h3 class="pricing-title">DIY Chatbot</h3>
-              <div class="pricing-price">
-                <span class="currency" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">$</span>
-                <span class="amount">497</span>
-                <span class="period" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">- $4,997</span>
-              </div>
-              <p class="pricing-description">
-                One-time buildout - complete ownership solution
-              </p>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">DIY Chatbot</h3>
+                    <div class="pricing-price">
+                        <span class="currency" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">$</span>
+                        <span class="amount">497</span>
+                        <span class="period" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">- $4,997</span>
+                    </div>
+                    <p class="pricing-description">
+                        One-time buildout - complete ownership solution
+                    </p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i>Custom conversation design</li>
+                    <li><i class="fas fa-check"></i>Niche-specific training</li>
+                    <li>
+                        <i class="fas fa-check"></i>Complete handoff & documentation
+                    </li>
+                    <li><i class="fas fa-check"></i>Training session included</li>
+                    <li><i class="fas fa-check"></i>30-day support period</li>
+                    <li><i class="fas fa-check"></i>Full source code & assets</li>
+                    <li>
+                        <i class="fas fa-info-circle"></i
+                        ><strong>Requires ManyChat account</strong>
+                    </li>
+                    <li>
+                        <i class="fas fa-info-circle"></i>Free account (limited) or Pro
+                        ($15/mo)
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-outline">Get Quote</a>
             </div>
-            <ul class="pricing-features">
-              <li><i class="fas fa-check"></i>Custom conversation design</li>
-              <li><i class="fas fa-check"></i>Niche-specific training</li>
-              <li>
-                <i class="fas fa-check"></i>Complete handoff & documentation
-              </li>
-              <li><i class="fas fa-check"></i>Training session included</li>
-              <li><i class="fas fa-check"></i>30-day support period</li>
-              <li><i class="fas fa-check"></i>Full source code & assets</li>
-              <li>
-                <i class="fas fa-info-circle"></i
-                ><strong>Requires ManyChat account</strong>
-              </li>
-              <li>
-                <i class="fas fa-info-circle"></i>Free account (limited) or Pro
-                ($15/mo)
-              </li>
-            </ul>
-            <a href="#contact" class="btn btn-outline">Get Quote</a>
-          </div>
-          <div class="pricing-card featured">
-            <div class="pricing-badge">Most Popular</div>
-            <div class="pricing-header">
-              <h3 class="pricing-title">Fully Managed</h3>
-              <div class="pricing-price">
-                <span class="currency" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">$</span>
-                <span class="amount">197</span>
-                <span class="period" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">/month</span>
-              </div>
-              <p class="pricing-description">
-                Buildout + ongoing management & optimization
-              </p>
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Fully Managed</h3>
+                    <div class="pricing-price">
+                        <span class="currency" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">$</span>
+                        <span class="amount">197</span>
+                        <span class="period" style="font-size: 3rem; font-weight: 700; color: var(--primary-color);">/month</span>
+                    </div>
+                    <p class="pricing-description">
+                        Buildout + ongoing management & optimization
+                    </p>
+                </div>
+                <ul class="pricing-features">
+                    <li>
+                        <i class="fas fa-check"></i
+                        ><strong>Buildout: $497 - $4,997</strong>
+                    </li>
+                    <li><i class="fas fa-check"></i>ManyChat Pro hosting</li>
+                    <li><i class="fas fa-check"></i>Ongoing optimization</li>
+                    <li><i class="fas fa-check"></i>Performance monitoring</li>
+                    <li>
+                        <i class="fas fa-check"></i>Regular updates & improvements
+                    </li>
+                    <li><i class="fas fa-check"></i>24/7 technical support</li>
+                    <li><i class="fas fa-check"></i>Monthly performance reports</li>
+                    <li><i class="fas fa-check"></i>Strategy consultations</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Get Quote</a>
             </div>
-            <ul class="pricing-features">
-              <li>
-                <i class="fas fa-check"></i
-                ><strong>Buildout: $497 - $4,997</strong>
-              </li>
-              <li><i class="fas fa-check"></i>ManyChat Pro hosting</li>
-              <li><i class="fas fa-check"></i>Ongoing optimization</li>
-              <li><i class="fas fa-check"></i>Performance monitoring</li>
-              <li>
-                <i class="fas fa-check"></i>Regular updates & improvements
-              </li>
-              <li><i class="fas fa-check"></i>24/7 technical support</li>
-              <li><i class="fas fa-check"></i>Monthly performance reports</li>
-              <li><i class="fas fa-check"></i>Strategy consultations</li>
-            </ul>
-            <a href="#contact" class="btn btn-primary">Get Quote</a>
-          </div>
-          <div class="pricing-card">
-            <div class="pricing-header">
-              <h3 class="pricing-title">Add-on Modules</h3>
-              <div class="pricing-price">
-                <span class="amount">Custom</span>
-                <span class="period">Pricing</span>
-              </div>
-              <p class="pricing-description">
-                Enhance any chatbot with specialized features
-              </p>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Add-on Modules</h3>
+                    <div class="pricing-price">
+                        <span class="amount">Custom</span>
+                        <span class="period">Pricing</span>
+                    </div>
+                    <p class="pricing-description">
+                        Enhance any chatbot with specialized features
+                    </p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i>Lead Capture & Qualification</li>
+                    <li>
+                        <i class="fas fa-check"></i>Appointment Booking Integration
+                    </li>
+                    <li><i class="fas fa-check"></i>FAQ / Auto-Responder Bot</li>
+                    <li><i class="fas fa-check"></i>Post-Purchase Follow-Up</li>
+                    <li><i class="fas fa-check"></i>Instagram Comment to DM</li>
+                    <li><i class="fas fa-check"></i>Custom Bot Assistant Design</li>
+                    <li><i class="fas fa-check"></i>Abandoned Cart Recovery</li>
+                    <li>
+                        <i class="fas fa-check"></i>Email/Autoresponder Integration
+                    </li>
+                    <li>
+                        <i class="fas fa-check"></i>Tagging + CRM-style note logging
+                    </li>
+                    <li><i class="fas fa-check"></i>Prebuilt Product Catalog</li>
+                    <li><i class="fas fa-check"></i>"Help Me Decide" Flow Builder</li>
+                    <li>
+                        <i class="fas fa-check"></i>Mini-Tutorial Bot for Digital
+                        Products
+                    </li>
+                </ul>
+                <a href="#contact" class="btn btn-outline">Explore Add-ons</a>
             </div>
-            <ul class="pricing-features">
-              <li><i class="fas fa-check"></i>Lead Capture & Qualification</li>
-              <li>
-                <i class="fas fa-check"></i>Appointment Booking Integration
-              </li>
-              <li><i class="fas fa-check"></i>FAQ / Auto-Responder Bot</li>
-              <li><i class="fas fa-check"></i>Post-Purchase Follow-Up</li>
-              <li><i class="fas fa-check"></i>Instagram Comment to DM</li>
-              <li><i class="fas fa-check"></i>Custom Bot Assistant Design</li>
-              <li><i class="fas fa-check"></i>Abandoned Cart Recovery</li>
-              <li>
-                <i class="fas fa-check"></i>Email/Autoresponder Integration
-              </li>
-              <li>
-                <i class="fas fa-check"></i>Tagging + CRM-style note logging
-              </li>
-              <li><i class="fas fa-check"></i>Prebuilt Product Catalog</li>
-              <li><i class="fas fa-check"></i>"Help Me Decide" Flow Builder</li>
-              <li>
-                <i class="fas fa-check"></i>Mini-Tutorial Bot for Digital
-                Products
-              </li>
-            </ul>
-            <a href="#contact" class="btn btn-outline">Explore Add-ons</a>
-          </div>
         </div>
         <div class="pricing-note">
-          <p>
-            <strong>Buildout costs range from $497 &ndash; $4,997 based on complexity.</strong>
-          </p>
-          <p style="margin-top: 1rem">
-            DIY customers pay only the one-time buildout fee. Managed customers
-            pay the buildout fee plus $197/month for ongoing management. Pricing
-            depends on complexity, niche requirements, integration needs, and
-            desired features.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <div class="contact-content">
-          <div class="contact-main">
-            <h2 class="section-title">Ready for Your Custom Chatbot?</h2>
-            <p class="section-description">
-              Get started with a free consultation to discuss your niche,
-              requirements, and the perfect chatbot solution for your business.
+            <p>
+                <strong>Buildout costs range from $497 &ndash; $4,997 based on complexity.</strong>
             </p>
+            <p style="margin-top: 1rem">
+                DIY customers pay only the one-time buildout fee. Managed customers
+                pay the buildout fee plus $197/month for ongoing management. Pricing
+                depends on complexity, niche requirements, integration needs, and
+                desired features.
+            </p>
+        </div>
+    </div>
+</section>
 
-           
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-main">
+                <h2 class="section-title">Ready for Your Custom Chatbot?</h2>
+                <p class="section-description">
+                    Get started with a free consultation to discuss your niche,
+                    requirements, and the perfect chatbot solution for your business.
+                </p>
+
+
             </div>
 
             <!-- Primary Chat CTA -->
             <div class="chat-cta-section">
-              <div class="chat-demo-info">
-                <div class="chat-icon">
-                  <i class="fas fa-comments"></i>
+                <div class="chat-demo-info">
+                    <div class="chat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="chat-content">
+                        <h3>Let's Chat!</h3>
+                        <p>
+                            Experience firsthand how a custom chatbot works by chatting
+                            with ours. Get instant answers about pricing, services, and
+                            how we can build the perfect bot for your niche.
+                        </p>
+                    </div>
                 </div>
-                <div class="chat-content">
-                  <h3>Let's Chat!</h3>
-                  <p>
-                    Experience firsthand how a custom chatbot works by chatting
-                    with ours. Get instant answers about pricing, services, and
-                    how we can build the perfect bot for your niche.
-                  </p>
-                </div>
-              </div>
-              <button id="main-chat-button" class="btn btn-primary btn-large">
-                <i class="fas fa-rocket"></i>
-                Start Chatting Now
-              </button>
-              <p class="chat-note">
-                Our bot will qualify your needs and connect you with our team
-                for a personalized quote.
-              </p>
+                <button id="main-chat-button" class="btn btn-primary btn-large">
+                    <i class="fas fa-rocket"></i>
+                    Start Chatting Now
+                </button>
+                <p class="chat-note">
+                    Our bot will qualify your needs and connect you with our team
+                    for a personalized quote.
+                </p>
             </div>
 
             <!-- Alternative Contact Methods -->
             <div class="contact-alternatives">
-              <h4>Other Ways to Connect</h4>
-              <div class="contact-methods">
-                <a
-                  href="mailto:support@greatowlmarketing.com"
-                  class="contact-method"
-                >
-                  <i class="fas fa-envelope"></i>
-                  <span>support@greatowlmarketing.com</span>
-                </a>
-                <a
-                  href="https://calendly.com/phineasjholdings-info/30min"
-                  class="contact-method"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i class="fas fa-calendar-check"></i>
-                  <span>Book a 30‑minute call</span>
-                </a>
-              </div>
-              <div class="business-info">
-                <i class="fas fa-map-marker-alt"></i>
-                <span
-                  >Serving businesses worldwide with custom chatbot
+                <h4>Other Ways to Connect</h4>
+                <div class="contact-methods">
+                    <a
+                            href="mailto:support@greatowlmarketing.com"
+                            class="contact-method"
+                    >
+                        <i class="fas fa-envelope"></i>
+                        <span>support@greatowlmarketing.com</span>
+                    </a>
+                    <a
+                            href="https://calendly.com/phineasjholdings-info/30min"
+                            class="contact-method"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                    >
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Book a 30‑minute call</span>
+                    </a>
+                </div>
+                <div class="business-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span
+                    >Serving businesses worldwide with custom chatbot
                   solutions</span
-                >
-              </div>
+                    >
+                </div>
             </div>
-          </div>
         </div>
-      <div id="free-guide" class="getresponse-form-container" tabindex="-1" aria-label="Free Guide Signup">
-        <!--suppress HtmlUnknownTag -->
-                <getresponse-form form-id="b2decda2-b47b-4a80-b819-beefc5cea304" e="1"></getresponse-form>
-      </div>
-    </section>
+    </div>
+    <div id="free-guide" class="getresponse-form-container" tabindex="-1" aria-label="Free Guide Signup">
+        <div id="gr-form-placeholder"></div>
+        <script>
+            window.addEventListener("load", function() {
+                var form = document.createElement("getresponse-form");
+                form.setAttribute("form-id", "b2decda2-b47b-4a80-b819-beefc5cea304");
+                form.setAttribute("e", "1");
+                document.getElementById("gr-form-placeholder").appendChild(form);
+            });
+        </script>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
         <div class="footer-content">
-          <div class="footer-brand">
-            <div class="nav-brand">
-              <img
-                src="Great-Owl-LogoTransparent.png"
-                alt="Great Owl Marketing Logo"
-                class="brand-logo"
-              />
-              <span class="brand-text">Great Owl Marketing</span>
+            <div class="footer-brand">
+                <div class="nav-brand">
+                    <img
+                            src="Great-Owl-LogoTransparent.png"
+                            alt="Great Owl Marketing Logo"
+                            class="brand-logo"
+                    />
+                    <span class="brand-text">Great Owl Marketing</span>
+                </div>
+                <p class="footer-description">
+                    Creating intelligent, custom chatbots for businesses across every
+                    niche. Choose your perfect solution and soar above the
+                    competition.
+                </p>
             </div>
-            <p class="footer-description">
-              Creating intelligent, custom chatbots for businesses across every
-              niche. Choose your perfect solution and soar above the
-              competition.
-            </p>
-          </div>
-          <div class="footer-links">
-            <div class="footer-column">
-              <h4>Solutions</h4>
-              <ul>
-                <li><a href="#services">DIY Chatbots</a></li>
-                <li><a href="#services">Managed Chatbots</a></li>
-                <li><a href="#services">Add-on Modules</a></li>
-                <li><a href="#services">Niche Specialization</a></li>
-              </ul>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#services">DIY Chatbots</a></li>
+                        <li><a href="#services">Managed Chatbots</a></li>
+                        <li><a href="#services">Add-on Modules</a></li>
+                        <li><a href="#services">Niche Specialization</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#features">About Us</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-column">
-              <h4>Company</h4>
-              <ul>
-                <li><a href="#features">About Us</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Careers</a></li>
-              </ul>
-            </div>
-            <div class="footer-column">
-              <h4>Resources</h4>
-              <ul>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Case Studies</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">Support</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 Great Owl Marketing. All rights reserved.</p>
-          <div class="footer-legal">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-          </div>
+            <p>&copy; 2025 Great Owl Marketing. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <script>
-      // Mobile menu toggle
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("nav-menu");
+<script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
 
-      hamburger.addEventListener("click", () => {
+    hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
-      });
+    });
 
-      // Close menu when clicking on a link
-      document.querySelectorAll(".nav-link").forEach((n) =>
+    // Close menu when clicking on a link
+    document.querySelectorAll(".nav-link").forEach((n) =>
         n.addEventListener("click", () => {
-          hamburger.classList.remove("active");
-          navMenu.classList.remove("active");
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
         })
-      );
+    );
 
-      // Smooth scrolling (default to start)
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    // Smooth scrolling (default to start)
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
-          const href = this.getAttribute("href");
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            // If the link is the Free Guide link, center the form
-            if (href === "#free-guide") {
-              target.scrollIntoView({ behavior: "smooth", block: "center" });
-              // move focus for accessibility without scrolling
-              setTimeout(() => target.focus({ preventScroll: true }), 600);
-              history.replaceState(null, "", href);
-            } else {
-              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            const href = this.getAttribute("href");
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                // If the link is the Free Guide link, center the form
+                if (href === "#free-guide") {
+                    target.scrollIntoView({ behavior: "smooth", block: "center" });
+                    // move focus for accessibility without scrolling
+                    setTimeout(() => target.focus({ preventScroll: true }), 600);
+                    history.replaceState(null, "", href);
+                } else {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
             }
-          }
         });
-      });
+    });
 
-      // Form submission
-      document
+    // Form submission
+    document
         .getElementById("main-chat-button")
         .addEventListener("click", function () {
-          // Open ManyChat - same as the floating button
-          window.open("https://m.me/593357600524046", "_blank");
+            // Open ManyChat - same as the floating button
+            window.open("https://m.me/593357600524046", "_blank");
         });
 
-      // Add scroll effect to navbar
-      window.addEventListener("scroll", () => {
+    // Add scroll effect to navbar
+    window.addEventListener("scroll", () => {
         const navbar = document.querySelector(".navbar");
         if (window.scrollY > 100) {
-          navbar.classList.add("scrolled");
+            navbar.classList.add("scrolled");
         } else {
-          navbar.classList.remove("scrolled");
+            navbar.classList.remove("scrolled");
         }
-      });
+    });
 
-      // Animate automation graphic
-      function animateConnections() {
+    // Animate automation graphic
+    function animateConnections() {
         const connections = document.querySelectorAll(".connection");
         connections.forEach((connection, index) => {
-          setTimeout(() => {
-            connection.style.animation = "pulse 2s infinite";
-          }, index * 500);
+            setTimeout(() => {
+                connection.style.animation = "pulse 2s infinite";
+            }, index * 500);
         });
-      }
+    }
 
-      // Start animation when page loads
-      document.addEventListener("DOMContentLoaded", () => {
+    // Start animation when page loads
+    document.addEventListener("DOMContentLoaded", () => {
         setTimeout(animateConnections, 1000);
-      });
-    </script>
+    });
+</script>
 
-    <!-- Manual Chat Button (Backup) -->
+<!-- Manual Chat Button (Backup) -->
 <div
-  id="chat-button"
-  style="
+        id="chat-button"
+        style="
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -667,15 +669,17 @@
     font-size: 24px;
   "
 >
-  <i class="fas fa-comment-dots" aria-hidden="true"></i>
+    <i class="fas fa-comment-dots" aria-hidden="true"></i>
 </div>
 
 <script>
-  document.getElementById("chat-button").addEventListener("click", function () {
-    // Open ManyChat - replace with your actual ManyChat link
-    window.open("https://m.me/593357600524046", "_blank");
-  });
+    document.getElementById("chat-button").addEventListener("click", function () {
+        // Open ManyChat - replace with your actual ManyChat link
+        window.open("https://m.me/593357600524046", "_blank");
+    });
 </script>
-    <!-- deploy-check: 2025-08-26 16:29 local -->
-  </body>
+<!-- deploy-check: 2025-08-26 16:29 local -->
+
+
+</body>
 </html>
