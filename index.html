@@ -393,30 +393,69 @@
                         Enhance any chatbot with specialized features
                     </p>
                 </div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check"></i>Lead Capture & Qualification</li>
+                <ul class="pricing-features addons-list">
                     <li>
-                        <i class="fas fa-check"></i>Appointment Booking Integration
-                    </li>
-                    <li><i class="fas fa-check"></i>FAQ / Auto-Responder Bot</li>
-                    <li><i class="fas fa-check"></i>Post-Purchase Follow-Up</li>
-                    <li><i class="fas fa-check"></i>Instagram Comment to DM</li>
-                    <li><i class="fas fa-check"></i>Custom Bot Assistant Design</li>
-                    <li><i class="fas fa-check"></i>Abandoned Cart Recovery</li>
-                    <li>
-                        <i class="fas fa-check"></i>Email/Autoresponder Integration
+                      <i class="fas fa-check"></i>
+                      <span>Lead Capture & Qualification</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Lead Capture & Qualification" data-price="$97–$297 (one-time)" data-desc="High-converting opt-in flows with smart qualification questions. Tags leads by intent and sends data to your CRM/email tool.">View</button>
                     </li>
                     <li>
-                        <i class="fas fa-check"></i>Tagging + CRM-style note logging
+                      <i class="fas fa-check"></i>
+                      <span>Appointment Booking Integration</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Appointment Booking Integration" data-price="$147–$397 (one-time)" data-desc="Native integration with Calendly/Google Calendar to let users book calls or demos inside the chatbot.">View</button>
                     </li>
-                    <li><i class="fas fa-check"></i>Prebuilt Product Catalog</li>
-                    <li><i class="fas fa-check"></i>"Help Me Decide" Flow Builder</li>
                     <li>
-                        <i class="fas fa-check"></i>Mini-Tutorial Bot for Digital
-                        Products
+                      <i class="fas fa-check"></i>
+                      <span>FAQ / Auto-Responder Bot</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="FAQ / Auto-Responder Bot" data-price="$97–$297 (one-time)" data-desc="Answers common questions 24/7 with friendly fallback to human. Includes up to 25 curated Q&As.">View</button>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Post-Purchase Follow-Up</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Post-Purchase Follow-Up" data-price="$147–$497 (one-time)" data-desc="Automated satisfaction checks, review requests, and upsell flows that increase LTV.">View</button>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Instagram Comment to DM</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Instagram Comment to DM" data-price="$197–$497 (one-time)" data-desc="Auto-DM commenters with lead magnets, discount codes, or signup links to convert social traffic.">View</button>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Custom Bot Assistant Design</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Custom Bot Assistant Design" data-price="$247–$997 (one-time)" data-desc="On-brand avatar, tone, and conversation personality tailored to your business.">View</button>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Abandoned Cart Recovery</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Abandoned Cart Recovery" data-price="$197–$697 (one-time)" data-desc="Recover lost sales with timed reminders, incentives, and dynamic product links.">View</button>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Email/Autoresponder Integration</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Email/Autoresponder Integration" data-price="$97–$297 (one-time)" data-desc="Connects to GetResponse/Mailchimp/ConvertKit etc. with field mapping and tagging.">View</button>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Tagging + CRM-style note logging</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Tagging + CRM-style note logging" data-price="$97–$297 (one-time)" data-desc="Track conversation outcomes with tags and notes for clear sales follow-up.">View</button>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Prebuilt Product Catalog</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Prebuilt Product Catalog" data-price="$197–$697 (one-time)" data-desc="Shoppable catalog with categories, product cards, and quick‑add CTAs inside chat.">View</button>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>"Help Me Decide" Flow Builder</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Help Me Decide Flow Builder" data-price="$147–$497 (one-time)" data-desc="Guided quiz to recommend the best product or plan based on user answers.">View</button>
+                    </li>
+                    <li>
+                      <i class="fas fa-check"></i>
+                      <span>Mini-Tutorial Bot for Digital Products</span>
+                      <button type="button" class="btn btn-xs btn-outline view-addon" data-title="Mini-Tutorial Bot" data-price="$147–$497 (one-time)" data-desc="Onboarding tutorials delivered via chat to boost activation and reduce support.">View</button>
                     </li>
                 </ul>
-                <a href="#contact" class="btn btn-outline">Explore Add-ons</a>
+                <button type="button" class="btn btn-outline" id="explore-addons">Explore Add-ons</button>
             </div>
         </div>
         <div class="pricing-note">
@@ -432,6 +471,19 @@
         </div>
     </div>
 </section>
+
+<!-- Add-on Modal -->
+<dialog id="addonModal" aria-labelledby="addon-title">
+  <button class="addon-close" aria-label="Close dialog">×</button>
+  <div class="addon-card">
+    <h3 id="addon-title">Add-on</h3>
+    <p id="addon-price" class="addon-price"></p>
+    <p id="addon-desc" class="addon-desc"></p>
+    <div class="addon-actions">
+      <a href="#contact" class="btn btn-primary">Get This Add-on</a>
+    </div>
+  </div>
+</dialog>
 
 <!-- Contact Section -->
 <section id="contact" class="contact">
@@ -646,6 +698,56 @@
     document.addEventListener("DOMContentLoaded", () => {
         setTimeout(animateConnections, 1000);
     });
+</script>
+
+<script>
+// Add-on modal logic
+(function(){
+  const modal = document.getElementById('addonModal');
+  if(!modal) return;
+  const titleEl = document.getElementById('addon-title');
+  const priceEl = document.getElementById('addon-price');
+  const descEl = document.getElementById('addon-desc');
+  const closeBtn = modal.querySelector('.addon-close');
+
+  function openModal(title, price, desc){
+    titleEl.textContent = title || 'Add-on';
+    priceEl.textContent = price || '';
+    descEl.textContent = desc || '';
+    if(typeof modal.showModal === 'function'){
+      modal.showModal();
+    } else {
+      modal.setAttribute('open','');
+    }
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    setTimeout(()=>closeBtn.focus(), 50);
+  }
+  function closeModal(){
+    if(typeof modal.close === 'function') modal.close();
+    else modal.removeAttribute('open');
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  }
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e)=>{
+    const rect = modal.getBoundingClientRect();
+    const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+    if(!inside) closeModal();
+  });
+
+  document.querySelectorAll('.view-addon').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      openModal(btn.dataset.title, btn.dataset.price, btn.dataset.desc);
+    });
+  });
+
+  const explore = document.getElementById('explore-addons');
+  if(explore){ explore.addEventListener('click', ()=>{
+    const first = document.querySelector('.view-addon');
+    if(first) first.click();
+  }); }
+})();
 </script>
 
 <!-- Manual Chat Button (Backup) -->
