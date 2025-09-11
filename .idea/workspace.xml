@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="Styled new html pages">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/automation-glossary.html" beforeDir="false" afterPath="$PROJECT_DIR$/automation-glossary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/howto-automate-google-reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/howto-automate-google-reviews.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-compliance.html" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-compliance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pricing.html" beforeDir="false" afterPath="$PROJECT_DIR$/pricing.html" afterDir="false" />
-    </list>
+    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="Made entire site consistent with footer" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +97,7 @@
       <workItem from="1756241096363" duration="1349000" />
       <workItem from="1757423862930" duration="29554000" />
       <workItem from="1757514426399" duration="5719000" />
-      <workItem from="1757541286785" duration="1766000" />
+      <workItem from="1757541286785" duration="2520000" />
     </task>
     <task id="LOCAL-00001" summary="setting up webhook">
       <option name="closed" value="true" />
@@ -330,7 +323,23 @@
       <option name="project" value="LOCAL" />
       <updated>1757544656674</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added missing navbar link">
+      <option name="closed" value="true" />
+      <created>1757545352772</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1757545352772</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Made entire site consistent with footer">
+      <option name="closed" value="true" />
+      <created>1757589512569</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1757589512569</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -372,6 +381,8 @@
     <MESSAGE value="Added sitemap, robots.txt" />
     <MESSAGE value="Added sitemap, robots.txt and generator" />
     <MESSAGE value="Styled new html pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Styled new html pages" />
+    <MESSAGE value="Added missing navbar link" />
+    <MESSAGE value="Made entire site consistent with footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made entire site consistent with footer" />
   </component>
 </project>
