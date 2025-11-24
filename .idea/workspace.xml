@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="Made entire site consistent with footer">
+    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="Reverting back to original">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/howto-automate-google-reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/howto-automate-google-reviews.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +107,7 @@
       <workItem from="1757541286785" duration="3218000" />
       <workItem from="1758472571223" duration="38000" />
       <workItem from="1763680343823" duration="440000" />
-      <workItem from="1763944552773" duration="427000" />
+      <workItem from="1763944552773" duration="4211000" />
     </task>
     <task id="LOCAL-00001" summary="setting up webhook">
       <option name="closed" value="true" />
@@ -355,7 +357,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757627174119</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Reverting back to original">
+      <option name="closed" value="true" />
+      <created>1763945011810</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1763945011810</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -399,7 +409,8 @@
     <MESSAGE value="Styled new html pages" />
     <MESSAGE value="Added missing navbar link" />
     <MESSAGE value="Made entire site consistent with footer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made entire site consistent with footer" />
+    <MESSAGE value="Reverting back to original" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reverting back to original" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

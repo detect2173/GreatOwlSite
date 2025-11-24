@@ -169,6 +169,9 @@ body {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
 }
 
 .bar {
@@ -177,6 +180,11 @@ body {
   background: var(--text-primary);
   margin: 3px 0;
   transition: 0.3s;
+}
+
+.hamburger:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
 }
 
 /* Hero Section */
