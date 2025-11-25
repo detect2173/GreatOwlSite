@@ -31,9 +31,11 @@
             name="description"
             content="Transform your customer engagement with custom chatbots designed for your niche. Choose DIY (build and handoff) or fully managed solutions with ManyChat hosting and management."
     />
-    <link rel="stylesheet" href="styles/main.css?v=20250920" />
+    <link rel="stylesheet" href="styles/main.css?v=20251123" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="//widget.manychat.com" />
     <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
@@ -83,8 +85,9 @@
 <nav class="navbar">
     <div class="nav-container">
         <div class="nav-brand">
+            <!--suppress CheckImageSize -->
             <img
-                    src="assets/Great-Owl-LogoTransparent.png"
+                    src="Great-Owl-LogoTransparent.png"
                     alt="Great Owl Marketing Logo"
                     class="brand-logo"
                     width="160" height="40"
@@ -147,9 +150,12 @@
                 <div class="node node-2"><i class="fas fa-users"></i></div>
                 <div class="node node-3"><i class="fas fa-chart-line"></i></div>
                 <div class="node node-4"><i class="fas fa-robot"></i></div>
-                <div class="connection connection-1"></div>
-                <div class="connection connection-2"></div>
-                <div class="connection connection-3"></div>
+                <!-- Live connection lines drawn as SVG so they follow floating nodes -->
+                <svg class="connections" viewBox="0 0 400 400" preserveAspectRatio="none" aria-hidden="true">
+                    <line id="conn1" x1="0" y1="0" x2="0" y2="0" />
+                    <line id="conn2" x1="0" y1="0" x2="0" y2="0" />
+                    <line id="conn3" x1="0" y1="0" x2="0" y2="0" />
+                </svg>
             </div>
         </div>
     </div>
@@ -649,7 +655,7 @@
         <div id="gr-form-placeholder"></div>
         <script>
             window.addEventListener("load", function() {
-                var form = document.createElement("getresponse-form");
+                const form = document.createElement("getresponse-form");
                 form.setAttribute("form-id", "b2decda2-b47b-4a80-b819-beefc5cea304");
                 form.setAttribute("e", "1");
                 document.getElementById("gr-form-placeholder").appendChild(form);
@@ -665,8 +671,9 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="nav-brand">
+                    <!--suppress CheckImageSize -->
                     <img
-                            src="assets/Great-Owl-LogoTransparent.png"
+                            src="Great-Owl-LogoTransparent.png"
                             alt="Great Owl Marketing Logo"
                             class="brand-logo"
                             width="160" height="40"
@@ -731,7 +738,7 @@
         navMenu.classList.toggle("active");
     });
 
-    // Close menu when clicking on a link
+    // Close the menu when clicking on a link
     document.querySelectorAll(".nav-link").forEach((n) =>
         n.addEventListener("click", () => {
             hamburger.classList.remove("active");
@@ -767,7 +774,7 @@
             window.open("https://m.me/593357600524046", "_blank", "noopener,noreferrer");
         });
 
-    // Add scroll effect to navbar
+    // Add scroll effect to the navbar
     window.addEventListener("scroll", () => {
         const navbar = document.querySelector(".navbar");
         if (window.scrollY > 100) {
@@ -777,20 +784,69 @@
         }
     });
 
-    // Animate automation graphic
-    function animateConnections() {
-        const connections = document.querySelectorAll(".connection");
-        connections.forEach((connection, index) => {
-            setTimeout(() => {
-                connection.style.animation = "pulse 2s infinite";
-            }, index * 500);
+    // Dynamic SVG connections that follow floating nodes
+    (function(){
+        const R = 40; // node radius (80x80 nodes)
+        let rafId = 0;
+        let lastTs = 0;
+        function edgePoint(ax, ay, bx, by, r){
+            const dx = bx - ax, dy = by - ay;
+            const len = Math.hypot(dx, dy) || 1;
+            const ux = dx / len, uy = dy / len;
+            return { x: ax + ux * r, y: ay + uy * r };
+        }
+        function updateConnections(ts){
+            // throttle to ~30fps
+            if (ts && ts - lastTs < 33) { rafId = requestAnimationFrame(updateConnections); return; }
+            lastTs = ts || 0;
+            const container = document.querySelector('.automation-graphic');
+            const n1 = container?.querySelector('.node-1');
+            const n2 = container?.querySelector('.node-2');
+            const n3 = container?.querySelector('.node-3');
+            const n4 = container?.querySelector('.node-4');
+            const svg = container?.querySelector('svg.connections');
+            if (!container || !n1 || !n2 || !n3 || !n4 || !svg) { return; }
+            const rect = container.getBoundingClientRect();
+            const getCenter = (el)=>{
+                const r = el.getBoundingClientRect();
+                return { x: r.left - rect.left + r.width/2, y: r.top - rect.top + r.height/2 };
+            };
+            const c1 = getCenter(n1), c2 = getCenter(n2), c3 = getCenter(n3), c4 = getCenter(n4);
+            // Ensure the SVG viewport matches container size
+            svg.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
+            // Connections: 1→2, 1→4, 1→3
+            const a12 = edgePoint(c1.x, c1.y, c2.x, c2.y, R);
+            const b12 = edgePoint(c2.x, c2.y, c1.x, c1.y, R);
+            const a14 = edgePoint(c1.x, c1.y, c4.x, c4.y, R);
+            const b14 = edgePoint(c4.x, c4.y, c1.x, c1.y, R);
+            const a13 = edgePoint(c1.x, c1.y, c3.x, c3.y, R);
+            const b13 = edgePoint(c3.x, c3.y, c1.x, c1.y, R);
+            const setLine = (id, a, b)=>{
+                const ln = svg.querySelector(`#${id}`);
+                if (!ln) return;
+                ln.setAttribute('x1', a.x.toFixed(1));
+                ln.setAttribute('y1', a.y.toFixed(1));
+                ln.setAttribute('x2', b.x.toFixed(1));
+                ln.setAttribute('y2', b.y.toFixed(1));
+            };
+            setLine('conn1', a12, b12);
+            setLine('conn2', a14, b14);
+            setLine('conn3', a13, b13);
+            rafId = requestAnimationFrame(updateConnections);
+        }
+        function start(){
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(updateConnections);
+        }
+        function stop(){
+            cancelAnimationFrame(rafId);
+        }
+        document.addEventListener('DOMContentLoaded', start);
+        window.addEventListener('resize', start);
+        document.addEventListener('visibilitychange', ()=>{
+            if (document.hidden) stop(); else start();
         });
-    }
-
-    // Start animation when page loads
-    document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(animateConnections, 1000);
-    });
+    })();
 </script>
 
 <script>
@@ -815,7 +871,7 @@
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
     setTimeout(()=>{
-      // Prefer focusing the title for screen readers now that action buttons are removed
+      // Prefer focusing on the title for screen readers now that action buttons are removed
       (titleEl?.focus ? titleEl : closeBtn).focus();
     }, 50);
   }
@@ -867,7 +923,7 @@
 
 <script>
     document.getElementById("chat-button").addEventListener("click", function () {
-        // Open ManyChat - replace with your actual ManyChat link
+        // Open ManyChat - replace it with your actual ManyChat link
         window.open("https://m.me/593357600524046", "_blank", "noopener,noreferrer");
     });
 </script>

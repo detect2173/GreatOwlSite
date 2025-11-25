@@ -337,34 +337,39 @@ body {
   color: white;
   font-size: 1.5rem;
   box-shadow: var(--shadow-lg);
-  animation: float 3s ease-in-out infinite;
+  /* Use CSS variables so animation doesn't overwrite positional transforms */
+  --base-transform: none;
+  --float-y: 0px;
+  transform: var(--base-transform) translateY(var(--float-y));
+  will-change: transform;
+  animation: float-y 3s ease-in-out infinite;
 }
 
 .node-1 {
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  --base-transform: translateX(-50%);
   animation-delay: 0s;
 }
 
 .node-2 {
   top: 50%;
   right: 0;
-  transform: translateY(-50%);
+  --base-transform: translateY(-50%);
   animation-delay: 0.5s;
 }
 
 .node-3 {
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  --base-transform: translateX(-50%);
   animation-delay: 1s;
 }
 
 .node-4 {
   top: 50%;
   left: 0;
-  transform: translateY(-50%);
+  --base-transform: translateY(-50%);
   animation-delay: 1.5s;
   background: var(--accent-color);
 }
@@ -399,14 +404,42 @@ body {
   transform: rotate(45deg);
 }
 
-@keyframes float {
+@keyframes float-y {
   0%,
   100% {
-    transform: translateY(0px);
+    --float-y: 0px;
   }
   50% {
-    transform: translateY(-10px);
+    --float-y: -8px;
   }
+}
+
+/* Improve connection alignment stability on some GPUs */
+.connection {
+  position: absolute;
+  background: var(--primary-color);
+  border-radius: 2px;
+  will-change: opacity;
+}
+
+/* New: SVG-based live connections */
+.automation-graphic .connections {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.automation-graphic .connections line {
+  stroke: var(--primary-color);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .node { animation: none; }
 }
 
 @keyframes pulse {

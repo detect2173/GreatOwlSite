@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="Reverting back to original">
+    <list default="true" id="336a709e-5a7d-4ac8-ac72-0a7dfd7daffc" name="Changes" comment="Still trying to fix hero image animation - main.css updated.  Added 21 lines, removed 8 lines">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/automation-glossary.html" beforeDir="false" afterPath="$PROJECT_DIR$/automation-glossary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gom-onboarding.html" beforeDir="false" afterPath="$PROJECT_DIR$/gom-onboarding.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/howto-automate-google-reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/howto-automate-google-reviews.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-compliance.html" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-compliance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pricing.html" beforeDir="false" afterPath="$PROJECT_DIR$/pricing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/privacy-policy.html" beforeDir="false" afterPath="$PROJECT_DIR$/privacy-policy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smartbotpro-agreement.html" beforeDir="false" afterPath="$PROJECT_DIR$/smartbotpro-agreement.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/terms.html" beforeDir="false" afterPath="$PROJECT_DIR$/terms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thank-you.html" beforeDir="false" afterPath="$PROJECT_DIR$/thank-you.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +53,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JavaScript Debug.index.html (1).executor": "Run",
     "JavaScript Debug.index.html.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -65,7 +75,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "web.server",
+    "settings.editor.selected.configurable": "Errors",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -75,12 +85,16 @@
       <recent name="C:\repos\GreatOwlSite\.Junie" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="https://greatowlmarketing.com/index.html">
+      <method v="2" />
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/GreatOwlSite/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -107,7 +121,7 @@
       <workItem from="1757541286785" duration="3218000" />
       <workItem from="1758472571223" duration="38000" />
       <workItem from="1763680343823" duration="440000" />
-      <workItem from="1763944552773" duration="4211000" />
+      <workItem from="1763944552773" duration="7762000" />
     </task>
     <task id="LOCAL-00001" summary="setting up webhook">
       <option name="closed" value="true" />
@@ -365,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763945011810</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="updates">
+      <option name="closed" value="true" />
+      <created>1763994505691</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1763994505691</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -386,7 +408,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="setting up webhook" />
     <MESSAGE value="losing conflicting htaccess files" />
     <MESSAGE value="Added Anchor for GetResponse Form via navbar button" />
     <MESSAGE value="yml created" />
@@ -410,7 +431,9 @@
     <MESSAGE value="Added missing navbar link" />
     <MESSAGE value="Made entire site consistent with footer" />
     <MESSAGE value="Reverting back to original" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reverting back to original" />
+    <MESSAGE value="updates" />
+    <MESSAGE value="Still trying to fix hero image animation - main.css updated.  Added 21 lines, removed 8 lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Still trying to fix hero image animation - main.css updated.  Added 21 lines, removed 8 lines" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
