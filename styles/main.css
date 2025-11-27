@@ -343,6 +343,7 @@ body {
   transform: var(--base-transform) translateY(var(--float-y));
   will-change: transform;
   animation: float-y 3s ease-in-out infinite;
+  z-index: 1; /* ensure nodes sit above connection lines */
 }
 
 .node-1 {
@@ -429,12 +430,16 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 0; /* lines under nodes */
 }
 .automation-graphic .connections line {
   stroke: var(--primary-color);
   stroke-width: 2;
   stroke-linecap: round;
   opacity: 0.9;
+  /* Keep line weight consistent when the SVG viewBox/resolution changes */
+  vector-effect: non-scaling-stroke;
+  shape-rendering: geometricPrecision;
 }
 
 /* Respect reduced motion preferences */

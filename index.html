@@ -786,7 +786,6 @@
 
     // Dynamic SVG connections that follow floating nodes
     (function(){
-        const R = 40; // node radius (80x80 nodes)
         let rafId = 0;
         let lastTs = 0;
         function edgePoint(ax, ay, bx, by, r){
@@ -807,20 +806,26 @@
             const svg = container?.querySelector('svg.connections');
             if (!container || !n1 || !n2 || !n3 || !n4 || !svg) { return; }
             const rect = container.getBoundingClientRect();
-            const getCenter = (el)=>{
-                const r = el.getBoundingClientRect();
-                return { x: r.left - rect.left + r.width/2, y: r.top - rect.top + r.height/2 };
-            };
-            const c1 = getCenter(n1), c2 = getCenter(n2), c3 = getCenter(n3), c4 = getCenter(n4);
+            const getBox = (el)=> el.getBoundingClientRect();
+            const b1 = getBox(n1), b2 = getBox(n2), b3 = getBox(n3), b4 = getBox(n4);
+            const c1 = { x: b1.left - rect.left + b1.width/2, y: b1.top - rect.top + b1.height/2 };
+            const c2 = { x: b2.left - rect.left + b2.width/2, y: b2.top - rect.top + b2.height/2 };
+            const c3 = { x: b3.left - rect.left + b3.width/2, y: b3.top - rect.top + b3.height/2 };
+            const c4 = { x: b4.left - rect.left + b4.width/2, y: b4.top - rect.top + b4.height/2 };
+            // Compute radii dynamically from current node size (handles responsive 60px/80px)
+            const r1 = Math.min(b1.width, b1.height) / 2;
+            const r2 = Math.min(b2.width, b2.height) / 2;
+            const r3 = Math.min(b3.width, b3.height) / 2;
+            const r4 = Math.min(b4.width, b4.height) / 2;
             // Ensure the SVG viewport matches container size
             svg.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
             // Connections: 1→2, 1→4, 1→3
-            const a12 = edgePoint(c1.x, c1.y, c2.x, c2.y, R);
-            const b12 = edgePoint(c2.x, c2.y, c1.x, c1.y, R);
-            const a14 = edgePoint(c1.x, c1.y, c4.x, c4.y, R);
-            const b14 = edgePoint(c4.x, c4.y, c1.x, c1.y, R);
-            const a13 = edgePoint(c1.x, c1.y, c3.x, c3.y, R);
-            const b13 = edgePoint(c3.x, c3.y, c1.x, c1.y, R);
+            const a12 = edgePoint(c1.x, c1.y, c2.x, c2.y, r1);
+            const b12 = edgePoint(c2.x, c2.y, c1.x, c1.y, r2);
+            const a14 = edgePoint(c1.x, c1.y, c4.x, c4.y, r1);
+            const b14 = edgePoint(c4.x, c4.y, c1.x, c1.y, r4);
+            const a13 = edgePoint(c1.x, c1.y, c3.x, c3.y, r1);
+            const b13 = edgePoint(c3.x, c3.y, c1.x, c1.y, r3);
             const setLine = (id, a, b)=>{
                 const ln = svg.querySelector(`#${id}`);
                 if (!ln) return;
@@ -841,7 +846,9 @@
         function stop(){
             cancelAnimationFrame(rafId);
         }
-        document.addEventListener('DOMContentLoaded', start);
+        // Start immediately if DOM is already ready (script runs at the end of body)
+        if (document.readyState !== 'loading') start();
+        else document.addEventListener('DOMContentLoaded', start);
         window.addEventListener('resize', start);
         document.addEventListener('visibilitychange', ()=>{
             if (document.hidden) stop(); else start();
